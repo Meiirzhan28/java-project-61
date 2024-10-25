@@ -1,5 +1,13 @@
 plugins {
     id("java")
+    id("application")
+
+}
+
+
+application {
+
+   mainClass.set("hexlet.code.App")
 }
 
 group = "hexlet.code"
@@ -10,10 +18,12 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.3"))
+    testImplementation(platform("org.junit:junit-bom:5.11.0-M1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
 tasks.test {
     useJUnitPlatform()
 }
+
+
