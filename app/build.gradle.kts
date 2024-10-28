@@ -5,7 +5,7 @@ plugins {
 }
 
 checkstyle {
-    configFile = file("app/config/checkstyle/checkstyle.xml")
+    configFile = file("config/checkstyle/checkstyle.xml")
 }
 
 
@@ -13,12 +13,13 @@ application {
 
    mainClass.set("hexlet.code.App")
 }
-tasks.withType(Checkstyle) {
+tasks.withType<Checkstyle>().configureEach {
     reports {
-        xml.required = false
-        html.required = true
+        xml.required = false // Отключить XML-отчет
+        html.required = true  // Включить HTML-отчет
     }
 }
+
 tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
 }
