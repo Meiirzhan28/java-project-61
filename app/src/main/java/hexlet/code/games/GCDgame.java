@@ -3,24 +3,23 @@ package hexlet.code.games;
 import hexlet.code.Gamerule;
 import hexlet.code.Utils;
 
-public class Calcgame implements Gamerule {
-
+public class GCDgame implements Gamerule {
     @Override
     public String Gameinfo() {
-        return "What is the result of the expression?";
+        return "Find the greatest common divisor of given numbers.";
     }
 
     @Override
     public String Generatequestion() {
         int first = Utils.random();
         int second = Utils.random();
-        return first +" "+ Utils.oper() +" "+ second ;
+        return first +" "+ second;
     }
 
     @Override
     public String Getcorrectanswer(String question) {
         String[] questions = question.split(" ");
-        int result = Utils.calcresult(questions[0], questions[2],questions[1]);
+        int result = Utils.GCDresult(questions[0], questions[1]);
         return String.valueOf(result);
     }
 

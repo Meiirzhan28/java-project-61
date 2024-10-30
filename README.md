@@ -7,3 +7,6 @@
 
 ### CAlC GAME:
 ![img1.png](images/img1.png)
+
+### GCD GAME:
+![img2.png](images/img2.png)

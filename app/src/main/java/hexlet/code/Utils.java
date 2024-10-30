@@ -30,4 +30,15 @@ public class Utils {
         }
         return result;
     }
+
+    public static int GCDresult(String a, String b){
+        int first = Math.max(Integer.valueOf(a), Integer.valueOf(b));
+        int second = Math.min(Integer.valueOf(a), Integer.valueOf(b));
+        while (second != 0){
+            int temp = second;
+            second = first % second;
+            first = temp;
+        }
+        return first;
+    }
 }
