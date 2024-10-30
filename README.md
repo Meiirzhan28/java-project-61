@@ -3,3 +3,7 @@
 
 ### EVEN GAME:
 ![img.png](images/img.png)
+
+
+### CAlC GAME:
+![img1.png](images/img1.png)
