@@ -1,36 +1,34 @@
 package hexlet.code.games;
 
+
+import hexlet.code.Gamerule;
+import hexlet.code.User;
+import hexlet.code.Utils;
+
 import java.util.Random;
 import java.util.Scanner;
 
-public class Evengame {
-    public static boolean evengame() {
-        Scanner sc = new Scanner(System.in);
-        int correctanswer = 0;
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        while (correctanswer < 3) {
-            int rand = random();
-            System.out.println("Question: " + rand);
-            System.out.println("Your answer: ");
-            String answer = sc.nextLine();
-            if (iseven(rand).equals(answer)) {
-                correctanswer += 1;
-                System.out.println("Correct!");
-            } else {
-                return false;
-            }
-        }
-        return true;
+public class Evengame implements Gamerule {
+
+
+    @Override
+    public String Gameinfo() {
+        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
-    public static int random(){
-        Random rand = new Random();
-        return rand.nextInt(101);
+    @Override
+    public String Generatequestion() {
+        String question = String.valueOf(Utils.random());
+        return question ;
     }
-    public static String iseven(int numb){
-        if (numb%2==0){
-            return "yes";
-        }
-        return "no";
+
+    @Override
+    public String Getcorrectanswer(String question) {
+        return Utils.iseven(question);
+    }
+
+    @Override
+    public boolean Iscorrect(String useranswer, String correctanswer) {
+        return correctanswer.equals(useranswer);
     }
 }
