@@ -34,11 +34,13 @@ public class App {
                 engine.starting();
             }else if (choice == 1) {
                 User.Hello();
-            }else {
+            }else if (choice == 0) {
                 System.out.println("Exit");
+            }else{
+                throw new Exception();
             }
         }catch (Exception e) {
-            System.out.print("ERRORR");
+            System.out.print("Wrong choice");
         }
     }
 }

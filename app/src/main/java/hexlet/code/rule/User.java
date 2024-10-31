@@ -8,6 +8,6 @@ public class User {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         name = Cli.name();
-        System.out.print("Hello, " + name + "!");
+        System.out.println("Hello, " + name + "!");
     }
 }
