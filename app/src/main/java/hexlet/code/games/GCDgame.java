@@ -1,9 +1,9 @@
 package hexlet.code.games;
 
-import hexlet.code.rule.Gamerule;
+import hexlet.code.Cli;
 import hexlet.code.Utils;
 
-public class GCDgame implements Gamerule {
+public class GCDgame implements Cli.Gamerule {
     @Override
     public String gameinfo() {
         return "Find the greatest common divisor of given numbers.";

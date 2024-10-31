@@ -1,9 +1,9 @@
 package hexlet.code.games;
 
-import hexlet.code.rule.Gamerule;
+import hexlet.code.Cli;
 import hexlet.code.Utils;
 
-public class Calcgame implements Gamerule {
+public class Calcgame implements Cli.Gamerule {
 
     @Override
     public String gameinfo() {
