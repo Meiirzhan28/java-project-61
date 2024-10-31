@@ -37,7 +37,7 @@ public class App {
                 throw new Exception();
             }
         } catch (Exception e) {
-            System.out.print("Wrong choice");
+            System.out.print("Wrong");
         }
     }
     public static Gamerule createGame(int choice) throws Exception {
