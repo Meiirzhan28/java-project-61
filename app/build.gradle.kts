@@ -12,7 +12,7 @@ checkstyle {
 
 application {
 
-   mainClass.set("hexlet.code.App")
+   mainClass.set("hexlet.code.app")
 }
 tasks.withType<Checkstyle>().configureEach {
     reports {
