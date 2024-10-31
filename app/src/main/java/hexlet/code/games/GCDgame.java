@@ -5,26 +5,26 @@ import hexlet.code.Utils;
 
 public class GCDgame implements Gamerule {
     @Override
-    public String Gameinfo() {
+    public String gameinfo() {
         return "Find the greatest common divisor of given numbers.";
     }
 
     @Override
-    public String Generatequestion() {
+    public String generatequestion() {
         int first = Utils.random();
         int second = Utils.random();
-        return first +" "+ second;
+        return first + " " + second;
     }
 
     @Override
-    public String Getcorrectanswer(String question) {
+    public String getcorrectanswer(String question) {
         String[] questions = question.split(" ");
-        int result = Utils.GCDresult(questions[0], questions[1]);
+        int result = Utils.gCdresult(questions[0], questions[1]);
         return String.valueOf(result);
     }
 
     @Override
-    public boolean Iscorrect(String useranswer, String correctanswer) {
+    public boolean iscorrect(String useranswer, String correctanswer) {
         return correctanswer.equals(useranswer);
     }
 }

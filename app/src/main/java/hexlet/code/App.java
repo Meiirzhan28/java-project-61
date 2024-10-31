@@ -1,6 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Evengame;
+import hexlet.code.games.Calcgame;
+import hexlet.code.games.GCDgame;
+import hexlet.code.games.Progressiongame;
+import hexlet.code.games.Primegame;
 import hexlet.code.rule.Gamerule;
 import hexlet.code.rule.User;
 
@@ -18,29 +22,31 @@ public class App {
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
         Scanner sc = new Scanner(System.in);
-        Gamerule game = null;
         try {
             int choice = sc.nextInt();
             if (choice > 1 && choice <= 6) {
-                User.Hello();
-                switch (choice) {
-                    case 2 -> game = new Evengame();
-                    case 3 -> game = new Calcgame();
-                    case 4 -> game = new GCDgame();
-                    case 5 -> game = new Progressiongame();
-                    case 6 -> game = new Primegame();
-                }
-                Engine engine = new Engine(game);
+                User.hello();
+                Engine engine = new Engine(createGame(choice));
                 engine.starting();
-            }else if (choice == 1) {
-                User.Hello();
-            }else if (choice == 0) {
+            } else if (choice == 1) {
+                User.hello();
+            } else if (choice == 0) {
                 System.out.println("Exit");
-            }else{
+            } else {
                 throw new Exception();
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.print("Wrong choice");
         }
+    }
+    public static Gamerule createGame(int choice) throws Exception {
+        return switch (choice) {
+            case 2 -> new Evengame();
+            case 3 -> new Calcgame();
+            case 4 -> new GCDgame();
+            case 5 -> new Progressiongame();
+            case 6 -> new Primegame();
+            default -> throw new Exception("Invalid choice!");
+        };
     }
 }

@@ -4,7 +4,7 @@ import hexlet.code.Cli;
 
 public class User {
     public static String name;
-    public static void Hello(){
+    public static void hello() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         name = Cli.name();

@@ -6,26 +6,26 @@ import hexlet.code.Utils;
 public class Calcgame implements Gamerule {
 
     @Override
-    public String Gameinfo() {
+    public String gameinfo() {
         return "What is the result of the expression?";
     }
 
     @Override
-    public String Generatequestion() {
+    public String generatequestion() {
         int first = Utils.random();
         int second = Utils.random();
-        return first +" "+ Utils.oper() +" "+ second ;
+        return first + " " + Utils.oper() + " " + second;
     }
 
     @Override
-    public String Getcorrectanswer(String question) {
+    public String getcorrectanswer(String question) {
         String[] questions = question.split(" ");
-        int result = Utils.calcresult(questions[0], questions[2],questions[1]);
+        int result = Utils.calcresult(questions[0], questions[2], questions[1]);
         return String.valueOf(result);
     }
 
     @Override
-    public boolean Iscorrect(String useranswer, String correctanswer) {
+    public boolean iscorrect(String useranswer, String correctanswer) {
         return correctanswer.equals(useranswer);
     }
 }
