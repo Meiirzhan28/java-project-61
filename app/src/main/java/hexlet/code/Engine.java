@@ -1,12 +1,15 @@
 package hexlet.code;
 
+import hexlet.code.rule.Gamerule;
+import hexlet.code.rule.User;
+
 import java.util.Scanner;
 
 public class Engine {
-    private final Cli.Gamerule game;
+    private final Gamerule game;
     private String correctanswer;
     private String useranswer;
-    public Engine(Cli.Gamerule game) {
+    public Engine(Gamerule game) {
         this.game = game;
     }
 
@@ -28,10 +31,10 @@ public class Engine {
             }
         }
         if (winround == 3) {
-            System.out.println("Congratulations, " + Cli.User.name);
+            System.out.println("Congratulations, " + User.name);
         } else {
             System.out.print("\"" + useranswer + "\"" + " is wrong answer ;(. Correct answer was "
-                    + "\"" + correctanswer + "\"" + ".\n" + "Let's try again, " + Cli.User.name + "!");
+                    + "\"" + correctanswer + "\"" + ".\n" + "Let's try again, " + User.name + "!");
         }
     }
 

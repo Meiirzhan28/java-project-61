@@ -1,10 +1,11 @@
 package hexlet.code.games;
 
 
-import hexlet.code.Cli;
-import hexlet.code.Utils;
 
-public class Evengame implements Cli.Gamerule {
+import hexlet.code.Utils;
+import hexlet.code.rule.Gamerule;
+
+public class Evengame implements Gamerule {
 
 
     @Override

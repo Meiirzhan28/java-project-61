@@ -5,6 +5,8 @@ import hexlet.code.games.Calcgame;
 import hexlet.code.games.GCDgame;
 import hexlet.code.games.Progressiongame;
 import hexlet.code.games.Primegame;
+import hexlet.code.rule.Gamerule;
+import hexlet.code.rule.User;
 
 import java.util.Scanner;
 
@@ -23,11 +25,11 @@ public class App {
         try {
             int choice = sc.nextInt();
             if (choice > 1 && choice <= 6) {
-                Cli.User.hello();
+                User.hello();
                 Engine engine = new Engine(createGame(choice));
                 engine.starting();
             } else if (choice == 1) {
-                Cli.User.hello();
+                User.hello();
             } else if (choice == 0) {
                 System.out.println("Exit");
             } else {
@@ -37,7 +39,7 @@ public class App {
             System.out.print("Wrong choice");
         }
     }
-    public static Cli.Gamerule createGame(int choice) throws Exception {
+    public static Gamerule createGame(int choice) throws Exception {
         return switch (choice) {
             case 2 -> new Evengame();
             case 3 -> new Calcgame();

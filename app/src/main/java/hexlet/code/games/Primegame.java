@@ -1,9 +1,9 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
+import hexlet.code.rule.Gamerule;
 import hexlet.code.Utils;
 
-public class Primegame implements Cli.Gamerule {
+public class Primegame implements Gamerule {
     @Override
     public String gameinfo() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
