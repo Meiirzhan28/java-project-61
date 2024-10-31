@@ -1,6 +1,6 @@
-package hexlet.code;
+package hexlet.code.rule;
 
-import java.util.Scanner;
+import hexlet.code.Cli;
 
 public class User {
     public static String name;

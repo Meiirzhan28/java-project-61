@@ -3,23 +3,21 @@ package hexlet.code.games;
 import hexlet.code.rule.Gamerule;
 import hexlet.code.Utils;
 
-public class Progressiongame implements Gamerule {
-    public String num;
+public class Primegame implements Gamerule {
     @Override
     public String Gameinfo() {
-        return "What number is missing in the progression?";
+        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
     @Override
     public String Generatequestion() {
-        String[] res = Utils.progressionques();
-        this.num = res[1];
-        return res[0];
+        String question = String.valueOf(Utils.random());
+        return question;
     }
 
     @Override
     public String Getcorrectanswer(String question) {
-        return this.num;
+        return Utils.prime(question);
     }
 
     @Override
@@ -27,4 +25,3 @@ public class Progressiongame implements Gamerule {
         return correctanswer.equals(useranswer);
     }
 }
-

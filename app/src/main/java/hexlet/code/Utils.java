@@ -77,5 +77,18 @@ public class Utils {
         finalresult[1] = winnum;
         return finalresult;
     }
+    public static String prime(String num) {
+        int a = Integer.parseInt(num);
+        if (a <= 1) {
+            return "no";
+        }
 
+        for (int i = 2; i <= Math.sqrt(a); i++) {
+            if (a % i == 0) {
+                return "no";
+            }
+        }
+
+        return "yes";
+    }
 }

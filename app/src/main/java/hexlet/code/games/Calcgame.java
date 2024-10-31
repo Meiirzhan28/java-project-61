@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.Gamerule;
+import hexlet.code.rule.Gamerule;
 import hexlet.code.Utils;
 
 public class Calcgame implements Gamerule {

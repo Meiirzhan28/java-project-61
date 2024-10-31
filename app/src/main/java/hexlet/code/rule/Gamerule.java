@@ -1,6 +1,4 @@
-package hexlet.code;
-
-import java.util.Random;
+package hexlet.code.rule;
 
 public interface Gamerule{
     String Gameinfo();

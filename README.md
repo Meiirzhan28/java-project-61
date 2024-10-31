@@ -13,3 +13,6 @@
 
 ### Progression GAME:
 ![img3.png](images/img3.png)
+
+### PRIME GAME:
+![img4.png](images/img4.png)

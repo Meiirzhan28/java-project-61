@@ -1,12 +1,8 @@
 package hexlet.code.games;
 
 
-import hexlet.code.Gamerule;
-import hexlet.code.User;
+import hexlet.code.rule.Gamerule;
 import hexlet.code.Utils;
-
-import java.util.Random;
-import java.util.Scanner;
 
 public class Evengame implements Gamerule {
 

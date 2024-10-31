@@ -1,7 +1,7 @@
 package hexlet.code;
 
-import hexlet.code.games.Calcgame;
-import hexlet.code.games.Evengame;
+import hexlet.code.rule.Gamerule;
+import hexlet.code.rule.User;
 
 import java.util.Scanner;
 
