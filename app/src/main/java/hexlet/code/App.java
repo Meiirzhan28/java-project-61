@@ -26,6 +26,7 @@ public class App {
             int choice = sc.nextInt();
             if (choice > 1 && choice <= 6) {
                 User.hello();
+                System.out.println();
                 Engine engine = new Engine(createGame(choice));
                 engine.starting();
             } else if (choice == 1) {
