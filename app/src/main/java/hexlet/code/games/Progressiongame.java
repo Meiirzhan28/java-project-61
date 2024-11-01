@@ -14,6 +14,7 @@ public class Progressiongame implements Gamerule {
     public String generatequestion() {
         String[] res = Utils.progressionques();
         this.num = res[1];
+        System.out.println(res[0]);
         return res[0];
     }
 

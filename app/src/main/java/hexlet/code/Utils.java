@@ -62,23 +62,34 @@ public class Utils {
         int start = random();
         int prognum = random();
         int secretnum = rand.nextInt(0, times);
-        String result = "";
         String winnum = "";
-        String[] finalresult = new String[2];
+        String[] finalresult = new String[times+1];
         for (int i = 0; i < times; i++) {
-            if (i != secretnum) {
-                result = result + " " + start;
+            if (i != secretnum ) {
+                finalresult[i] = String.valueOf(start);
                 start = start + prognum;
             } else if (i == secretnum) {
-                result = result + " ..";
+                finalresult[i] = "..";
                 winnum += String.valueOf(start);
                 start = start + prognum;
             }
         }
-        finalresult[0] = result;
-        finalresult[1] = winnum;
-        return finalresult;
+        finalresult[times+1] = winnum;
+        return resultProgress(finalresult);
     }
+
+    public static String[] resultProgress(String[] str){
+        String[] result = new String[2];
+        String ab = str[0];
+        for (int i = 1; i < str.length-1; i++) {
+            ab = ab + " " + str[i];
+        }
+        result[0] = ab;
+        result[1] = str[str.length-1];
+        return result;
+    }
+
+
     public static String prime(String num) {
         int a = Integer.parseInt(num);
         if (a <= 1) {
