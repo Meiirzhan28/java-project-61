@@ -11,7 +11,7 @@ import hexlet.code.rule.User;
 import java.util.Scanner;
 
 public class App {
-    private static final int SIX = 6
+    private static final int SIX = 6;
     private static final int ONE = 1;
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter");
