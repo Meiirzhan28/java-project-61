@@ -9,8 +9,8 @@ public final class User {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String username) {
+        this.name = username;
     }
 
     public void hello() {
