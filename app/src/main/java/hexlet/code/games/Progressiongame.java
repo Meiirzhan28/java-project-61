@@ -4,7 +4,7 @@ import hexlet.code.rule.Gamerule;
 import hexlet.code.Utils;
 
 public class Progressiongame implements Gamerule {
-    public String num;
+    private String num;
     @Override
     public final String gameinfo() {
         return "What number is missing in the progression?";
