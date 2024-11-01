@@ -74,7 +74,7 @@ public class Utils {
                 start = start + prognum;
             }
         }
-        finalresult[times+1] = winnum;
+        finalresult[times] = winnum;
         return resultProgress(finalresult);
     }
 
