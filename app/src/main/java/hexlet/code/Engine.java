@@ -6,19 +6,20 @@ import hexlet.code.rule.User;
 import java.util.Scanner;
 
 public class Engine {
+    private static final int ROUND = 3;
     private final Gamerule game;
     private String correctanswer;
     private String useranswer;
-    public Engine(Gamerule game) {
-        this.game = game;
+    public Engine(Gamerule games) {
+        this.game = games;
     }
 
-    public void starting() {
+    public final void starting() {
         User user = new User();
         System.out.println(game.gameinfo());
         Scanner scanner = new Scanner(System.in);
         int winround = 0;
-        while (winround < 3) {
+        while (winround < ROUND) {
             String question = game.generatequestion();
             System.out.println("Question: " + question);
             System.out.println("Your answer: ");
@@ -31,7 +32,7 @@ public class Engine {
                 break;
             }
         }
-        if (winround == 3) {
+        if (winround == ROUND) {
             System.out.println("Congratulations, " + user.getName() + "!");
         } else {
             System.out.print("\"" + useranswer + "\"" + " is wrong answer ;(. Correct answer was "

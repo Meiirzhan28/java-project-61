@@ -6,12 +6,12 @@ import hexlet.code.Utils;
 public class Progressiongame implements Gamerule {
     public String num;
     @Override
-    public String gameinfo() {
+    public final String gameinfo() {
         return "What number is missing in the progression?";
     }
 
     @Override
-    public String generatequestion() {
+    public final String generatequestion() {
         String[] res = Utils.progressionques();
         this.num = res[1];
         System.out.println(res[0]);
@@ -19,12 +19,12 @@ public class Progressiongame implements Gamerule {
     }
 
     @Override
-    public String getcorrectanswer(String question) {
+    public final String getcorrectanswer(String question) {
         return this.num;
     }
 
     @Override
-    public boolean iscorrect(String useranswer, String correctanswer) {
+    public final boolean iscorrect(String useranswer, String correctanswer) {
         return correctanswer.equals(useranswer);
     }
 }
