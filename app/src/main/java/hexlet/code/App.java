@@ -22,15 +22,16 @@ public class App {
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
         Scanner sc = new Scanner(System.in);
+        User user = new User();
         try {
             int choice = sc.nextInt();
             if (choice > 1 && choice <= 6) {
-                User.hello();
+                user.hello();
                 System.out.println();
                 Engine engine = new Engine(createGame(choice));
                 engine.starting();
             } else if (choice == 1) {
-                User.hello();
+                user.hello();
             } else if (choice == 0) {
                 System.out.println("Exit");
             } else {
@@ -41,12 +42,12 @@ public class App {
         }
     }
     public static Gamerule createGame(int choice) throws Exception {
-        return switch (choice) {
-            case 2 -> new Evengame();
-            case 3 -> new Calcgame();
-            case 4 -> new GCDgame();
-            case 5 -> new Progressiongame();
-            case 6 -> new Primegame();
+        return switch (String.valueOf(choice)) {
+            case "2" -> new Evengame();
+            case "3" -> new Calcgame();
+            case "4" -> new GCDgame();
+            case "5" -> new Progressiongame();
+            case "6" -> new Primegame();
             default -> throw new Exception("Invalid choice!");
         };
     }

@@ -63,9 +63,9 @@ public class Utils {
         int prognum = random();
         int secretnum = rand.nextInt(0, times);
         String winnum = "";
-        String[] finalresult = new String[times+1];
+        String[] finalresult = new String[times + 1];
         for (int i = 0; i < times; i++) {
-            if (i != secretnum ) {
+            if (i != secretnum) {
                 finalresult[i] = String.valueOf(start);
                 start = start + prognum;
             } else if (i == secretnum) {
@@ -78,14 +78,14 @@ public class Utils {
         return resultProgress(finalresult);
     }
 
-    public static String[] resultProgress(String[] str){
+    public static String[] resultProgress(String[] str) {
         String[] result = new String[2];
         String ab = str[0];
-        for (int i = 1; i < str.length-1; i++) {
+        for (int i = 1; i < str.length - 1; i++) {
             ab = ab + " " + str[i];
         }
         result[0] = ab;
-        result[1] = str[str.length-1];
+        result[1] = str[str.length - 1];
         return result;
     }
 

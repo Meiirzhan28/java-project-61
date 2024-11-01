@@ -14,6 +14,7 @@ public class Engine {
     }
 
     public void starting() {
+        User user = new User();
         System.out.println(game.gameinfo());
         Scanner scanner = new Scanner(System.in);
         int winround = 0;
@@ -31,10 +32,10 @@ public class Engine {
             }
         }
         if (winround == 3) {
-            System.out.println("Congratulations, " + User.name + "!");
+            System.out.println("Congratulations, " + user.getName() + "!");
         } else {
             System.out.print("\"" + useranswer + "\"" + " is wrong answer ;(. Correct answer was "
-                    + "\"" + correctanswer + "\"" + ".\n" + "Let's try again, " + User.name + "!");
+                    + "\"" + correctanswer + "\"" + ".\n" + "Let's try again, " + user.getName() + "!");
         }
     }
 
