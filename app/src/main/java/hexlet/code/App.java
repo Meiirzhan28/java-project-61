@@ -11,6 +11,8 @@ import hexlet.code.rule.User;
 import java.util.Scanner;
 
 public class App {
+    private static final int SIX = 6
+    private static final int ONE = 1;
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter");
         System.out.println("1 - Greet");
@@ -25,7 +27,7 @@ public class App {
         User user = new User();
         try {
             int choice = sc.nextInt();
-            if (choice > 1 && choice <= 6) {
+            if (choice > ONE && choice <= SIX) {
                 user.hello();
                 System.out.println();
                 Engine engine = new Engine(createGame(choice));

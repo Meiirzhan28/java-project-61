@@ -2,7 +2,7 @@ package hexlet.code.rule;
 
 import hexlet.code.Cli;
 
-public class User {
+public final class User {
     private static String name;
 
     public String getName() {

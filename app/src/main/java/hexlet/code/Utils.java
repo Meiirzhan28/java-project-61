@@ -3,10 +3,13 @@ package hexlet.code;
 import java.util.Random;
 
 public class Utils {
+    private static final int UPPER_LIMIT = 101;
+    private static final int MIN_LIMIT = 5;
+    private static final int MAX_LIMIT = 10;
     /// FOR EVEN GAME
     public static int random() {
         Random rand = new Random();
-        return rand.nextInt(101);
+        return rand.nextInt(UPPER_LIMIT);
     }
     public static String iseven(String question) {
         if (Integer.valueOf(question) % 2 == 0) {
@@ -58,7 +61,7 @@ public class Utils {
     /// FOR PROGRESSION GAME
     public static String[] progressionques() {
         Random rand = new Random();
-        int times = rand.nextInt(5, 10);
+        int times = rand.nextInt(MIN_LIMIT, MAX_LIMIT);
         int start = random();
         int prognum = random();
         int secretnum = rand.nextInt(0, times);
