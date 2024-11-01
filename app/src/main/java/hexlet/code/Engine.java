@@ -31,7 +31,7 @@ public class Engine {
             }
         }
         if (winround == 3) {
-            System.out.println("Congratulations, " + User.name);
+            System.out.println("Congratulations, " + User.name + "!");
         } else {
             System.out.print("\"" + useranswer + "\"" + " is wrong answer ;(. Correct answer was "
                     + "\"" + correctanswer + "\"" + ".\n" + "Let's try again, " + User.name + "!");
