@@ -5,16 +5,16 @@ import hexlet.code.Utils;
 import java.util.Random;
 
 public class Calcgame {
-
+    private static final int ROUND = 3;
 
     public static String gameinfo() {
         return "What is the result of the expression?";
     }
 
     public static String[][] generateData() {
-        String[][] data = new String[3][2];
+        String[][] data = new String[ROUND][2];
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < ROUND; i++) {
             int first = Utils.random();
             int second = Utils.random();
             String operand = oper();

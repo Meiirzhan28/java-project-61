@@ -7,15 +7,15 @@ import java.util.Random;
 public class Progressiongame {
     private static final int MIN_LIMIT = 5;
     private static final int MAX_LIMIT = 10;
-
+    private static final int ROUND = 3;
     public static String gameinfo() {
         return "What number is missing in the progression?";
     }
 
 
     public static String[][] generateData() {
-        String[][] data = new String[3][2];
-        for (int i = 0; i < 3; i++) {
+        String[][] data = new String[ROUND][2];
+        for (int i = 0; i < ROUND; i++) {
             String[] progressionData = progressionques();
             data[i][0] = progressionData[0];
             data[i][1] = progressionData[1];
