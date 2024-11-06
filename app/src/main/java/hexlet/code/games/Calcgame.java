@@ -1,31 +1,44 @@
 package hexlet.code.games;
 
 import hexlet.code.Utils;
-import hexlet.code.rule.Gamerule;
 
-public class Calcgame implements Gamerule {
+import java.util.Random;
 
-    @Override
-    public final String gameinfo() {
+public class Calcgame {
+
+
+    public static String gameinfo() {
         return "What is the result of the expression?";
     }
 
-    @Override
-    public final String generatequestion() {
-        int first = Utils.random();
-        int second = Utils.random();
-        return first + " " + Utils.oper() + " " + second;
+    public static String[][] generateData() {
+        String[][] data = new String[3][2];
+
+        for (int i = 0; i < 3; i++) {
+            int first = Utils.random();
+            int second = Utils.random();
+            String operand = oper();
+            String question = first + " " + operand + " " + second;
+            String answer = String.valueOf(calcresult(first, second, operand));
+            data[i][0] = question;
+            data[i][1] = answer;
+        }
+        return data;
     }
 
-    @Override
-    public final String getcorrectanswer(String question) {
-        String[] questions = question.split(" ");
-        int result = Utils.calcresult(questions[0], questions[2], questions[1]);
-        return String.valueOf(result);
+    public static String oper() {
+        String[] operands = new String[]{"+", "-", "*"};
+        Random rand = new Random();
+        int randomNum = rand.nextInt(2); // Рандомное число для выбора операнда
+        return operands[randomNum];
     }
 
-    @Override
-    public final boolean iscorrect(String useranswer, String correctanswer) {
-        return correctanswer.equals(useranswer);
+    public static int calcresult(int first, int second, String operand) {
+        return switch (operand) {
+            case "+" -> first + second;
+            case "-" -> first - second;
+            case "*" -> first * second;
+            default -> 0;
+        };
     }
 }

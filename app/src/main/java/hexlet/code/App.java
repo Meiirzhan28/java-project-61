@@ -5,15 +5,22 @@ import hexlet.code.games.Calcgame;
 import hexlet.code.games.GCDgame;
 import hexlet.code.games.Progressiongame;
 import hexlet.code.games.Primegame;
-import hexlet.code.rule.Gamerule;
-import hexlet.code.rule.User;
 
 import java.util.Scanner;
 
 public class App {
-    private static final int SIX = 6;
-    private static final int ONE = 1;
+    private static final int GREET = 1;
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD = 4;
+    private static final int PROGRESSION = 5;
+    private static final int PRIME = 6;
+    private static final int EXIT = 0;
+    private static String userName;
+
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
         System.out.println("Please enter the game number and press Enter");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -23,18 +30,17 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
-        Scanner sc = new Scanner(System.in);
-        User user = new User();
+
         try {
             int choice = sc.nextInt();
-            if (choice > ONE && choice <= SIX) {
-                user.hello();
+            if (choice == GREET) {
+                hello();
+            } else if (choice >= EVEN && choice <= PRIME) {
                 System.out.println();
-                Engine engine = new Engine(createGame(choice));
-                engine.starting();
-            } else if (choice == 1) {
-                user.hello();
-            } else if (choice == 0) {
+                hello();
+                System.out.println();
+                startGame(choice);
+            } else if (choice == EXIT) {
                 System.out.println("Exit");
             } else {
                 throw new Exception();
@@ -43,14 +49,40 @@ public class App {
             System.out.print("Wrong");
         }
     }
-    public static Gamerule createGame(int choice) throws Exception {
-        return switch (String.valueOf(choice)) {
-            case "2" -> new Evengame();
-            case "3" -> new Calcgame();
-            case "4" -> new GCDgame();
-            case "5" -> new Progressiongame();
-            case "6" -> new Primegame();
+    public static void startGame(int choice) throws Exception {
+        String rules;
+        String[][] data;
+        switch (choice) {
+            case EVEN -> {
+                rules = Evengame.gameinfo();
+                data = Evengame.generateData();
+            }
+            case CALC -> {
+                rules = Calcgame.gameinfo();
+                data = Calcgame.generateData();
+            }
+            case GCD -> {
+                rules = GCDgame.gameinfo();
+                data = GCDgame.generateData();
+            }
+            case PROGRESSION -> {
+                rules = Progressiongame.gameinfo();
+                data = Progressiongame.generateData();
+            }
+            case PRIME -> {
+                rules = Primegame.gameinfo();
+                data = Primegame.generateData();
+            }
             default -> throw new Exception("Invalid choice!");
-        };
+        }
+        Engine.starting(rules, data, userName);
+    }
+
+    public static void hello() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        userName = sc.nextLine();
+        System.out.print("Hello, " + userName + "!");
     }
 }

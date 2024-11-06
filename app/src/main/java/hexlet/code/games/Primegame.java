@@ -1,27 +1,36 @@
 package hexlet.code.games;
 
-import hexlet.code.rule.Gamerule;
 import hexlet.code.Utils;
 
-public class Primegame implements Gamerule {
-    @Override
-    public final String gameinfo() {
+public class Primegame  {
+
+    public static String gameinfo() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
-    @Override
-    public final String generatequestion() {
-        String question = String.valueOf(Utils.random());
-        return question;
+    public static String[][] generateData() {
+        String[][] data = new String[3][2];
+        for (int i = 0; i < 3; i++) {
+            String num = String.valueOf(Utils.random());
+            String correctAnswer = prime(num);
+            data[i][0] = num;
+            data[i][1] = correctAnswer;
+        }
+        return data;
     }
 
-    @Override
-    public final String getcorrectanswer(String question) {
-        return Utils.prime(question);
-    }
+    public static String prime(String num) {
+        int a = Integer.parseInt(num);
+        if (a <= 1) {
+            return "no";
+        }
 
-    @Override
-    public final boolean iscorrect(String useranswer, String correctanswer) {
-        return correctanswer.equals(useranswer);
+        for (int i = 2; i <= Math.sqrt(a); i++) {
+            if (a % i == 0) {
+                return "no";
+            }
+        }
+
+        return "yes";
     }
 }

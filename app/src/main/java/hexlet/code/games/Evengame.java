@@ -1,31 +1,30 @@
 package hexlet.code.games;
 
-
-
 import hexlet.code.Utils;
-import hexlet.code.rule.Gamerule;
 
-public class Evengame implements Gamerule {
+public class Evengame {
+    private static final int UPPER_LIMIT = 101;
 
-
-    @Override
-    public final String gameinfo() {
+    public static String gameinfo() {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
-    @Override
-    public final String generatequestion() {
-        String question = String.valueOf(Utils.random());
-        return question;
+    public static String[][] generateData() {
+        String[][] data = new String[3][2];
+        for (int i = 0; i < 3; i++) {
+            String question = String.valueOf(Utils.random());
+            String answer = iseven(question) ? "yes" : "no";
+            data[i][0] = question;
+            data[i][1] = answer;
+        }
+        return data;
     }
 
-    @Override
-    public final String getcorrectanswer(String question) {
-        return Utils.iseven(question);
+    public static boolean iseven(String question) {
+        if (Integer.valueOf(question) % 2 == 0) {
+            return true;
+        }
+        return false;
     }
 
-    @Override
-    public final boolean iscorrect(String useranswer, String correctanswer) {
-        return correctanswer.equals(useranswer);
-    }
 }
