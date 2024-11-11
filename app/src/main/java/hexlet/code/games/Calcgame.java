@@ -22,8 +22,8 @@ public class Calcgame {
         String[][] data = new String[ROUND][2];
 
         for (int i = 0; i < ROUND; i++) {
-            int first = Utils.random(0, 101);
-            int second = Utils.random(0, 101);
+            int first = Utils.random();
+            int second = Utils.random();
             String operand = oper();
             String question = first + " " + operand + " " + second;
             String answer = String.valueOf(calcresult(first, second, operand));

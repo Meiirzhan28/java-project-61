@@ -19,7 +19,7 @@ public class Primegame  {
     private static String[][] generateData() {
         String[][] data = new String[ROUND][2];
         for (int i = 0; i < ROUND; i++) {
-            String num = String.valueOf(Utils.random(0, 101));
+            String num = String.valueOf(Utils.random());
             String correctAnswer = prime(num);
             data[i][0] = num;
             data[i][1] = correctAnswer;

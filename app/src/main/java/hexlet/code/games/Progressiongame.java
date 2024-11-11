@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.Random;
-
 public class Progressiongame {
     private static final int MIN_LIMIT = 5;
     private static final int MAX_LIMIT = 10;
@@ -30,11 +28,10 @@ public class Progressiongame {
     }
 
     private static String[] progressionques() {
-        Random rand = new Random();
-        int times = rand.nextInt(MIN_LIMIT, MAX_LIMIT);
-        int start = Utils.random(0, 101);
-        int prognum = Utils.random(0, 101);
-        int secretnum = rand.nextInt(0, times);
+        int times = Utils.random(MIN_LIMIT, MAX_LIMIT);
+        int start = Utils.random();
+        int prognum = Utils.random();
+        int secretnum = Utils.random(0, times);
         String winnum = "";
         String[] finalresult = new String[times];
 
