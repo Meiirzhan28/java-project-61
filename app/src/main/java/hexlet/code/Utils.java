@@ -3,10 +3,8 @@ package hexlet.code;
 import java.util.Random;
 
 public class Utils {
-    private static final int UPPER_LIMIT = 101;
-    public static int random() {
-        Random rand = new Random();
-        return rand.nextInt(UPPER_LIMIT);
+    private static final Random RAND = new Random();
+    public static int random(int min, int max) {
+        return RAND.nextInt((max - min) + 1) + min;
     }
-
 }

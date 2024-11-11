@@ -34,10 +34,10 @@ public class App {
         try {
             int choice = sc.nextInt();
             if (choice == GREET) {
-                hello();
+                Cli.hello();
             } else if (choice >= EVEN && choice <= PRIME) {
                 System.out.println();
-                hello();
+                Cli.hello();
                 System.out.println();
                 startGame(choice);
             } else if (choice == EXIT) {
@@ -50,39 +50,24 @@ public class App {
         }
     }
     public static void startGame(int choice) throws Exception {
-        String rules;
-        String[][] data;
+        userName = Cli.getName();
         switch (choice) {
             case EVEN -> {
-                rules = Evengame.gameinfo();
-                data = Evengame.generateData();
+                Evengame.gamestart(userName);
             }
             case CALC -> {
-                rules = Calcgame.gameinfo();
-                data = Calcgame.generateData();
+                Calcgame.gamestart(userName);
             }
             case GCD -> {
-                rules = GCDgame.gameinfo();
-                data = GCDgame.generateData();
+                GCDgame.gamestart(userName);
             }
             case PROGRESSION -> {
-                rules = Progressiongame.gameinfo();
-                data = Progressiongame.generateData();
+                Progressiongame.gamestart(userName);
             }
             case PRIME -> {
-                rules = Primegame.gameinfo();
-                data = Primegame.generateData();
+                Primegame.gamestart(userName);
             }
             default -> throw new Exception("Invalid choice!");
         }
-        Engine.starting(rules, data, userName);
-    }
-
-    public static void hello() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        userName = sc.nextLine();
-        System.out.print("Hello, " + userName + "!");
     }
 }
