@@ -1,10 +1,11 @@
 package hexlet.code;
 
-import hexlet.code.games.Evengame;
-import hexlet.code.games.Calcgame;
-import hexlet.code.games.GCDgame;
-import hexlet.code.games.Progressiongame;
-import hexlet.code.games.Primegame;
+import hexlet.code.games.EvenGame;
+import hexlet.code.games.CalcGame;
+import hexlet.code.games.GcdGame;
+import hexlet.code.games.PrimeGame;
+import hexlet.code.games.ProgressionGame;
+
 
 import java.util.Scanner;
 
@@ -53,19 +54,19 @@ public class App {
         userName = Cli.getName();
         switch (choice) {
             case EVEN -> {
-                Evengame.gamestart(userName);
+                EvenGame.gameStart(userName);
             }
             case CALC -> {
-                Calcgame.gamestart(userName);
+                CalcGame.gameStart(userName);
             }
             case GCD -> {
-                GCDgame.gamestart(userName);
+                GcdGame.gameStart(userName);
             }
             case PROGRESSION -> {
-                Progressiongame.gamestart(userName);
+                ProgressionGame.gameStart(userName);
             }
             case PRIME -> {
-                Primegame.gamestart(userName);
+                PrimeGame.gameStart(userName);
             }
             default -> throw new Exception("Invalid choice!");
         }

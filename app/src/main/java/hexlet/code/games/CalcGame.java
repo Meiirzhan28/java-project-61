@@ -5,15 +5,15 @@ import hexlet.code.Utils;
 
 import java.util.Random;
 
-public class Calcgame {
+public class CalcGame {
     private static final int ROUND = 3;
 
-    private static String gameinfo() {
+    private static String gameInfo() {
         return "What is the result of the expression?";
     }
 
-    public static void gamestart(String username) {
-        String rules = gameinfo();
+    public static void gameStart(String username) {
+        String rules = gameInfo();
         String[][] data = generateData();
         Engine.starting(rules, data, username);
     }
@@ -24,23 +24,23 @@ public class Calcgame {
         for (int i = 0; i < ROUND; i++) {
             int first = Utils.random();
             int second = Utils.random();
-            String operand = oper();
+            String operand = randomOperator();
             String question = first + " " + operand + " " + second;
-            String answer = String.valueOf(calcresult(first, second, operand));
+            String answer = String.valueOf(calculate(first, second, operand));
             data[i][0] = question;
             data[i][1] = answer;
         }
         return data;
     }
 
-    private static String oper() {
+    private static String randomOperator() {
         String[] operands = new String[]{"+", "-", "*"};
         Random rand = new Random();
         int randomNum = rand.nextInt(2); // Рандомное число для выбора операнда
         return operands[randomNum];
     }
 
-    private static int calcresult(int first, int second, String operand) {
+    private static int calculate(int first, int second, String operand) {
         return switch (operand) {
             case "+" -> first + second;
             case "-" -> first - second;
