@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 
 public class EvenGame {
     private static final int ROUND = 3;
-    private static final String GAME_RULES = "Answer 'yes' if the number is even, otherwise answer 'no'." ;
+    private static final String GAME_RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     private static String gameInfo() {
         return GAME_RULES;
