@@ -7,9 +7,10 @@ import java.util.Random;
 
 public class CalcGame {
     private static final int ROUND = 3;
+    private static final String GAME_RULES = "What is the result of the expression?";
 
     private static String gameInfo() {
-        return "What is the result of the expression?";
+        return GAME_RULES;
     }
 
     public static void gameStart(String username) {

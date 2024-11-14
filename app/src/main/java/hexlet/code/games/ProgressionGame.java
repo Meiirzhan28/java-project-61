@@ -7,9 +7,10 @@ public class ProgressionGame {
     private static final int MIN_LIMIT = 5;
     private static final int MAX_LIMIT = 10;
     private static final int ROUND = 3;
+    private static final String GAME_RULES = "What number is missing in the progression?";
 
     private static String gameInfo() {
-        return "What number is missing in the progression?";
+        return GAME_RULES;
     }
 
     public static void gameStart(String username) {

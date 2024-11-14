@@ -5,9 +5,10 @@ import hexlet.code.Utils;
 
 public class PrimeGame  {
     private static final int ROUND = 3;
+    private static final String GAME_RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     private static String gameInfo() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        return GAME_RULES;
     }
 
     public static void gameStart(String username) {

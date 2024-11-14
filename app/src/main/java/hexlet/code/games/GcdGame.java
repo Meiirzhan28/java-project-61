@@ -5,9 +5,10 @@ import hexlet.code.Utils;
 
 public class GcdGame  {
     private static final int ROUND = 3;
+    private static final String GAME_RULES = "Find the greatest common divisor of given numbers.";
 
     private static String gameInfo() {
-        return "Find the greatest common divisor of given numbers.";
+        return GAME_RULES;
     }
 
     public static void gameStart(String username) {
